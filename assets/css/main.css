@@ -2594,7 +2594,7 @@ input, select, textarea {
 		position: relative;
 	}
 
-		.image img, .image .anim-anillos, .image .anim-fiesta, .image .anim-vestuario {
+		.image img, .image .anim-anillos, .image .anim-fiesta, .image .anim-vestuario, .image .anim-regalo {
 			display: block;
 		}
 
@@ -2602,7 +2602,7 @@ input, select, textarea {
 			max-width: 40%;
 		}
 
-			.image.left img, .image.left .anim-anillos, .image.left .anim-vestuario, .image.right img, .image.right .anim-fiesta {
+			.image.left img, .image.left .anim-anillos, .image.left .anim-vestuario, .image.right img, .image.right .anim-fiesta, .image.right .anim-regalo {
 				width: 100%;
 			}
 
@@ -4723,6 +4723,14 @@ input, select, textarea {
   stroke: #81948B;
 }
 
+#anim-regalo svg path {
+  stroke: #81948B;
+}
+
+#anim-instagram svg path {
+  stroke: #595b5b;
+}
+
 .boda-ayg.separator-container-top {
   margin-bottom: -32px;
 }
@@ -4747,31 +4755,41 @@ input, select, textarea {
   align-items: center;
 }
 
+.boda-ayg-section-descripcion {
+  font-style: italic;
+  text-align: center;
+}
+
 .boda-ayg-descripcion {
   font-style: italic;
   text-align: center;
   padding: 50px 30px 0 30px;
 }
 
-.boda-ayg-descripcion p {
+.boda-ayg-descripcion p, .boda-ayg-section-descripcion p {
   text-align: center;
   margin-bottom: 0;
 }
 
+.ayg-section {
+  width: 100%;
+  max-width: 700px;
+}
+
 .boda-ayg.section-container {
   width: 100%;
-  max-width: 800px;
   display: flex !important;
   flex-direction: row;
   justify-content: space-between;
-  padding: 100px 20px 30px 20px;
+  padding: 30px 20px 30px 20px;
 }
 
 .ayg-circle {
   display: flex;
+  justify-content: center;
   width: 175px;
   height: 175px;
-  margin: 0 auto 20px;
+  margin: 0 auto;
   padding: 20px;
   /* background-color: #f5f5f5; */
   background: linear-gradient(145deg, #f9f7f2, #C6D6CE);
@@ -4779,6 +4797,11 @@ input, select, textarea {
   -webkit-box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.40);
   -moz-box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.40);
   box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.40);
+}
+
+.ayg-instagram-img-container {
+  display: flex;
+  justify-content: center;
 }
 
 .ayg-left {
@@ -4797,9 +4820,10 @@ input, select, textarea {
   justify-content: center;
 }
 
-.ayg-right .ayg-section-title-container,
-.ayg-left .ayg-section-title-container {
+.ayg-section-title-container,
+.ayg-section-title-container {
   text-align: center;
+  margin-top: 30px;
 }
 
 .ayg-section-title {
@@ -4819,6 +4843,25 @@ input, select, textarea {
   position: relative;
   width: 100%;
   margin-top: -14px;
+}
+
+.boda-ayg-hashtag-section {
+  height: 300px;
+}
+
+.boda-ayg-hashtag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ayg-hashtag {
+  margin-bottom: -45px;
+  font-family: 'Marcellus';
+  font-style: italic;
+  color: #595b5b;
+  font-size: 45px;
+  padding-left: 10px;
 }
 
 /* Imagen horizontal */
@@ -4914,6 +4957,15 @@ input, select, textarea {
   color: #81948B;
   font-size: 28px;
   line-height: normal;
+}
+
+.nothing-else {
+  margin-bottom: 40px;
+  font-family: 'Dancing Script';
+  color: #81948B;
+  font-size: 45px;
+  opacity: 0.35;
+  padding: 0 !important;
 }
 
 @media screen and (max-width: 620px) {
