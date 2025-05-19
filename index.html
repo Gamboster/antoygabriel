@@ -26,10 +26,13 @@
               Tu navegador no soporta el video.
             </video>
           
-            <button id="soundToggle" class="mute-btn">
-              <i id="iconSoundOn" class="lucide" data-lucide="volume-2"></i>
-              <i id="iconSoundOff" class="lucide" style="display: none;" data-lucide="volume-x"></i>
-            </button>
+            <div id="volume-control" class="volume-control">
+              <button id="soundToggle" class="mute-btn">
+                <i id="iconSoundOn" class="lucide" data-lucide="volume-2"></i>
+                <i id="iconSoundOff" class="lucide" style="display: none;" data-lucide="volume-x"></i>
+              </button>
+              <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="">
+            </div>
             <button onclick="location.reload();" id="reloadBtn" class="reload-btn"><i data-lucide="refresh-ccw"></i></button>
 
 						<h1>Anto<br />&<br />Gabriel</h1>
@@ -43,7 +46,7 @@
 
 				<!-- Header -->
 					<header id="header" class="ocultable">
-						<a href="index.html" class="logo">A & G</a>
+						<a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" class="logo">A & G</a>
 					</header>
 
 				<!-- Main -->
@@ -151,7 +154,7 @@
 
                 <div class="boda-ayg section-container">
                     <ul class="actions special">
-                      <li><a href="#" class="button large">Confirmar Asistencia</a></li>
+                      <li><a href="https://forms.gle/T9TK6HVLPgSXrzx79" target="_blank" class="button large">Confirmar Asistencia</a></li>
                     </ul>
                 </div>
 
@@ -227,22 +230,58 @@
                       Pero si deseás hacernos un obsequio, podés colaborar con nuestra luna de miel.
                     </p>
                   </div>
-                  <div class="boda-ayg section-container">
+                  <div class="boda-ayg section-container" style="padding-left: 0; padding-right: 0;">
                     <div class="ayg-left">
                       <div class="ayg-circle">
                         <div id="anim-regalo" class="anim-regalo" style="width: auto; height: auto;"></div>
                       </div>
                     </div>
-                    <div class="ayg-right">
-                      <div class="ayg-section-text" style="text-align: left;">Alias 1: <br /><b style="font-size: 18px;">bodaantoygabriel</b></div>
-                      <div class="ayg-section-text" style="text-align: left;">Alias 2: <br /><b style="font-size: 18px;">bodaantoygabriel.LEMON</b></div>
-                      <div class="ayg-section-text" style="text-align: left;">BTC: <br /><b style="font-size: 14px;">bc1q5wqjhanaqhnk5v8qn5xz9fhdqknwlsegk3uyqa</b></div>
-                      <div class="ayg-section-text" style="text-align: left;">EVM: <br /><b style="font-size: 14px;">0xFb1463929c37AE13E3bB2437A30c09B297012721</b></div>
+                    <div class="ayg-right gifts">
+                      <div class="ayg-section-text" style="text-align: left; cursor: pointer;" onclick="copiarTexto('bodaantoygabriel', 1)">
+                        <div class="ayg-section-gifts">
+                          <i id="copyIcon1" class="lucide" data-lucide="copy"></i>
+                          <i id="checkIcon1" class="lucide" style="display: none" data-lucide="check"></i>
+                          Alias 1:
+                        </div>
+                        <div>
+                          <b style="font-size: 18px; font-style: italic;">bodaantoygabriel</b>
+                        </div>
+                      </div>
+                      <div class="ayg-section-text" style="text-align: left; cursor: pointer;" onclick="copiarTexto('bodaantoygabriel.LEMON', 2)">
+                        <div class="ayg-section-gifts">
+                          <i id="copyIcon2" class="lucide" data-lucide="copy"></i>
+                          <i id="checkIcon2" class="lucide" style="display: none" data-lucide="check"></i>
+                          Alias 2:
+                        </div>
+                        <div>
+                          <b style="font-size: 18px; font-style: italic;">bodaantoygabriel.LEMON</b>
+                        </div>
+                      </div>
+                      <div class="ayg-section-text" style="text-align: left; cursor: pointer;" onclick="copiarTexto('bc1q5wqjhanaqhnk5v8qn5xz9fhdqknwlsegk3uyqa', 3)">
+                        <div class="ayg-section-gifts">
+                          <i id="copyIcon3" class="lucide" data-lucide="copy"></i>
+                          <i id="checkIcon3" class="lucide" style="display: none" data-lucide="check"></i>
+                          BTC:
+                        </div>
+                        <div>
+                          <b style="font-size: 14px; font-style: italic;">bc1q5wqjhanaqhnk5v8qn5xz9fhdqknwlsegk3uyqa</b>
+                        </div>
+                      </div>
+                      <div class="ayg-section-text" style="text-align: left; cursor: pointer;" onclick="copiarTexto('0xFb1463929c37AE13E3bB2437A30c09B297012721', 4)">
+                        <div class="ayg-section-gifts">
+                          <i id="copyIcon4" class="lucide" data-lucide="copy"></i>
+                          <i id="checkIcon4" class="lucide" style="display: none" data-lucide="check"></i>
+                          EVM:
+                        </div>
+                        <div>
+                          <b style="font-size: 14px; font-style: italic;">0xFb1463929c37AE13E3bB2437A30c09B297012721</b>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="boda-ayg-descripcion">
+                <div class="boda-ayg-descripcion" style="padding-top: 5px;">
                   <p>En el salón habrá un buzón donde podés dejar tu regalo en forma presencial.</p>
                 </div>
 
@@ -427,10 +466,32 @@
       const iconContainer = document.getElementById("soundIcon");
       const iconSoundOn = document.getElementById("iconSoundOn");
       const iconSoundOff = document.getElementById("iconSoundOff");
+
+      const volumeSlider = document.getElementById("volume-slider");
+      const volumeIcon = document.getElementById("volume-icon");
+
       // const reloadBtn = document.getElementById('reloadBtn');
       const easterEggBorisBtn = document.getElementById('borisHead');
       const easterEggEmpireBtn = document.getElementById('empireHead');
       const easterEggDudeBtn = document.getElementById('dudeHead');
+
+      function copiarTexto(texto, index) {
+        const copyIcon = document.getElementById("copyIcon" + index);
+        const checkIcon = document.getElementById("checkIcon" + index);
+        const textToCopy = texto;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          copyIcon.style.display = "none";
+          checkIcon.style.display = "inline"
+
+          setTimeout(() => {
+            copyIcon.style.display = "inline";
+            checkIcon.style.display = "none"
+          }, 2000);
+        }).catch(err => {
+          console.error("Error al copiar al portapapeles: ", err);
+        });
+      }
       
   
       btn.addEventListener('click', () => {
@@ -439,11 +500,27 @@
         if (video.muted) {
           iconSoundOn.style.display = "none";
           iconSoundOff.style.display = "inline";
+          volumeSlider.style.display = "none";
         } else {
           iconSoundOn.style.display = "inline";
           iconSoundOff.style.display = "none";
+          if (/Mobi|Android/i.test(navigator.userAgent)) {
+            volumeSlider.style.display = "none";
+          } else {
+            volumeSlider.style.display = "inline";
+          }
         }
       });
+
+      // Escuchar cambios en el slider
+      volumeSlider.addEventListener("input", function () {
+        video.volume = this.value;
+      });
+
+      if (/Mobi|Android/i.test(navigator.userAgent)) {
+        volumeSlider.style.display = "none";
+      }
+
       easterEggBorisBtn.addEventListener('click', () => {
         document.body.classList.add('no-scroll');
         const source = document.getElementById('videoSource');
@@ -452,7 +529,8 @@
         // Recargar y reproducir
         video.load();
         video.muted = false;
-        video.volume = 0.90; // Volumen 90%
+        video.volume = 0.85; // Volumen 85%
+        volumeSlider.value = 0.85;
         video.play();
         // btn.textContent = '🔊';
         // iconContainer.setAttribute("data-lucide", "volume-2");
@@ -467,7 +545,8 @@
         // Recargar y reproducir
         video.load();
         video.muted = false;
-        video.volume = 0.80; // Volumen 80%
+        video.volume = 0.85; // Volumen 85%
+        volumeSlider.value = 0.85;
         video.play();
         // btn.textContent = '🔊';
         // iconContainer.setAttribute("data-lucide", "volume-2");
@@ -482,7 +561,8 @@
         // Recargar y reproducir
         video.load();
         video.muted = false;
-        video.volume = 1; // Volumen max
+        video.volume = 0.85; // Volumen 85%
+        volumeSlider.value = 0.85;
         video.play();
         // btn.textContent = '🔊';
         // iconContainer.setAttribute("data-lucide", "volume-2");
@@ -497,8 +577,8 @@
         document.getElementById('main').classList.add("main-with-video");
         setTimeout(() => {
         document.getElementById('bgVideo').style.opacity = 1;
-        document.getElementById('soundToggle').style.display = 'block';
-        document.getElementById('reloadBtn').style.display = 'block';
+        document.getElementById('volume-control').style.display = 'flex';
+        document.getElementById('reloadBtn').style.display = 'flex';
         document.getElementById('wrapper').classList.add("wrapper-with-video");
         document.getElementById('intro').classList.add("intro-with-video");
         const nosCasamos = document.getElementById('nos-casamos');
