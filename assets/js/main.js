@@ -52,7 +52,7 @@
 		$this.each(function() {
 
 			var $t = $(this),
-				$bg = $('<div class="bg"></div>').appendTo($t),
+				$bg = $('<div id="bg-problematico" class="bg"></div>').appendTo($t),
 				on, off;
 
 			on = function() {
@@ -127,9 +127,9 @@
 
 		// Toggle.
 			$navPanelToggle = $(
-				'<a href="#navPanel" id="navPanelToggle">Menu</a>'
+				'<a href="#navPanel" id="navPanelToggle" style="font-family: Merriweather;">A&G</a>'
 			)
-				.appendTo($wrapper);
+				// .appendTo($wrapper);
 
 			// Change toggle styling once we've scrolled past the header.
 				$header.scrollex({
@@ -146,6 +146,19 @@
 			$navPanel = $(
 				'<div id="navPanel">' +
 					'<nav>' +
+					'<a href="#ceremonia" class="logo">Ceremonia</a>' +
+					'</nav>' +
+					'<nav>' +
+					'<a href="#navPanel">Fiesta</a>' +
+          '</nav>' +
+					'<nav>' +
+					'<a href="#navPanel">Dress Code</a>' +
+          '</nav>' +
+					'<nav>' +
+					'<a href="#navPanel">Regalos</a>' +
+					'</nav>' +
+          '<nav>' +
+					'<a href="#navPanel">Extra</a>' +
 					'</nav>' +
 					'<a href="#navPanel" class="close"></a>' +
 				'</div>'
@@ -220,17 +233,21 @@
 
 					$main.unscrollex();
 
-					$main.scrollex({
-						mode: 'bottom',
-						top: '25vh',
-						bottom: '-50vh',
-						enter: function() {
-							$intro.addClass('hidden');
-						},
-						leave: function() {
-							$intro.removeClass('hidden');
-						}
-					});
+          console.log('###### ENTRA!!!');
+          $main.scrollex({
+            mode: 'bottom',
+            top: '25vh',
+            bottom: '-50vh',
+            enter: function() {
+                if (!$body.hasClass('no-scroll')) {
+                $intro.addClass('hidden');
+              }
+              },
+              leave: function() {
+                $intro.removeClass('hidden');
+              }
+            });
+
 
 				});
 
@@ -239,18 +256,20 @@
 
 					$main.unscrollex();
 
-					$main.scrollex({
-						mode: 'middle',
-						top: '15vh',
-						bottom: '-15vh',
-						enter: function() {
-							$intro.addClass('hidden');
-						},
-						leave: function() {
-							$intro.removeClass('hidden');
-						}
-					});
-
+          console.log('###### ENTRA 2!!!');
+          $main.scrollex({
+            mode: 'middle',
+            top: '10vh',
+            bottom: '-10vh',
+            enter: function() {
+                if (!$body.hasClass('no-scroll')) {
+                  $intro.addClass('hidden');
+                }
+              },
+              leave: function() {
+                $intro.removeClass('hidden');
+              }
+            });
 			});
 
 		}

@@ -23,42 +23,28 @@
 					<div id="intro">
             <video id="bgVideo" class="video-background" autoplay loop playsinline muted>
               <source id="videoSource" src="" type="video/mp4">
-              <!-- <source src="video/The-Big-Lebowski-Dream-Sequence-One.mp4" type="video/mp4">
-              <source src="video/BorisBrejcha-Gravity.mp4" type="video/mp4">
-              <source src="video/EmpireOfTheSun-WeAreThePeople-ARTBAT-Remix.mp4" type="video/mp4"> -->
               Tu navegador no soporta el video.
             </video>
           
-            <button id="soundToggle" class="mute-btn">🔇</button>
+            <button id="soundToggle" class="mute-btn">
+              <i id="iconSoundOn" class="lucide" data-lucide="volume-2"></i>
+              <i id="iconSoundOff" class="lucide" style="display: none;" data-lucide="volume-x"></i>
+            </button>
+            <button onclick="location.reload();" id="reloadBtn" class="reload-btn"><i data-lucide="refresh-ccw"></i></button>
 
 						<h1>Anto<br />&<br />Gabriel</h1>
-            <p>¡Nos casamos!</p>
-						<p>Y queremos compartir este momento tan especial con vos.
-            </p>
-						<ul class="actions">
+            <span id="nos-casamos" class="intro-subtitle ocultable">¡Nos casamos!<br />Y queremos compartir este momento tan especial con vos.</span>
+						<!-- <p>Y queremos compartir este momento tan especial con vos. -->
+            <!-- </p> -->
+						<ul class="actions ocultable">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
 					</div>
 
 				<!-- Header -->
-					<header id="header">
+					<header id="header" class="ocultable">
 						<a href="index.html" class="logo">A & G</a>
 					</header>
-
-				<!-- Nav -->
-					<!-- <nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">This is Massively</a></li>
-							<li><a href="generic.html">Generic Page</a></li>
-							<li><a href="elements.html">Elements Reference</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav> -->
 
 				<!-- Main -->
 					<div id="main">
@@ -66,7 +52,7 @@
 						<!-- Featured Post -->
 							<article class="post featured padding">
 								<header class="major">
-									<span class="date">9 de Agosto, 2025</span>
+									<span id="date" class="date">9 de Agosto, 2025</span>
 
                   <div class="ayg-contenedor-contador">
                     <div class="ayg-contador-bg-img">
@@ -102,17 +88,17 @@
                     </div>
                   </div>
 
-									<p>Hace 10 años, el destino nos juntó<br />
+									<p id="countdown-subtext" class="ocultable" style="margin-top: 15px;">Hace 10 años, el destino nos juntó<br />
                     y desde entonces compartimos risas, aventuras y sueños.<br />
                     Cada día juntos ha sido una nueva página en nuestra historia, y queremos que seas parte de este momento tan especial.</p>
 								</header>
 							</article>
 
-              <div class="boda-ayg separator-container-top">
+              <div class="boda-ayg separator-container-top ocultable">
                 <img src="images/img_ondas1.svg" alt="Separación en ondas" width="100%" />
               </div>
 
-              <div class="boda-ayg info-container">
+              <div id="ceremonia" class="boda-ayg info-container ocultable">
                 <div class="ayg-section" data-aos="fade-right" data-aos-duration="750" data-aos-delay="100">
                   <div class="ayg-section-title-container">
                     <h2 class="ayg-section-title">Ceremonia</h2>
@@ -129,25 +115,31 @@
                       <div class="ayg-section-text">Parroquia Nuestra Señora del Valle</div>
                       <!-- https://maps.app.goo.gl/5UA97HfZHojpgbHi7 -->
                       <div class="ayg-section-text">Florida Sur 251, Yerba Buena, Tucumán</div>
+                      <ul class="actions special fixed">
+                        <li><a href="https://maps.app.goo.gl/5UA97HfZHojpgbHi7" target="_blank" class="button small">¿Cómo llegar?</a></li>
+                      </ul>
                     </div>
                   </div>
                 </div>
 
-                <div class="boda-ayg separator-container-bottom" style="width: 100%;">
+                <div class="boda-ayg separator-container-bottom" style="width: 102%;">
                   <img src="images/img_ondas4.svg" alt="Separación en ondas" width="100%" />
                 </div>
   
-                <div class="ayg-section" data-aos="fade-left" data-aos-duration="750" data-aos-delay="100">
+                <div id="fiesta" class="ayg-section" data-aos="fade-left" data-aos-duration="750" data-aos-delay="100">
                   <div class="ayg-section-title-container">
                     <h2 class="ayg-section-title">Fiesta</h2>
                   </div>
-                  <div class="boda-ayg section-container">
+                  <div class="boda-ayg section-container column-reverse">
                     <div class="ayg-left">
                       <div class="ayg-section-text">9 de Agosto, 2025</div>
                       <div class="ayg-section-text">18:00 h.</div>
                       <div class="ayg-section-text">San Pablo Country Life & Golf</div>
                       <!-- https://maps.app.goo.gl/pZTChWGmESsaBZZn9 -->
                       <div class="ayg-section-text">Av Solano Vera, Ruta Provincial 339 Km. 5, San Pablo, Tucumán</div>
+                      <ul class="actions special fixed">
+                        <li><a href="https://maps.app.goo.gl/pZTChWGmESsaBZZn9" target="_blank" class="button small">¿Cómo llegar?</a></li>
+                      </ul>
                     </div>
                     <div class="ayg-right text">
                       <div class="ayg-circle">
@@ -158,41 +150,34 @@
                 </div>
 
                 <div class="boda-ayg section-container">
-                  <!-- <div class="ayg-left"> -->
                     <ul class="actions special">
                       <li><a href="#" class="button large">Confirmar Asistencia</a></li>
                     </ul>
-                  <!-- </div>
-                  <div class="ayg-right text">
-                    <ul class="actions special">
-                      <li><a href="#" class="button large">Preguntas Frecuentes</a></li>
-                    </ul>
-                  </div> -->
                 </div>
 
               </div>
 
 
-              <div class="boda-ayg separator-container-bottom invertido">
+              <div class="boda-ayg separator-container-bottom invertido ocultable">
                 <img src="images/img_ondas1.svg" alt="Separación en ondas" width="100%" />
               </div>
 
-              <div class="ayg-imagen-horizontal-container">
+              <div class="ayg-imagen-horizontal-container ocultable">
                 <div class="ayg-imagen-horizontal">
                   <img id="miImagen" src="images/IMG_4484.jpg" alt="ayg imagen horizontal" />
                 </div>
               </div>
 
-              <div class="boda-ayg separator-container-top second-separator">
+              <div class="boda-ayg separator-container-top second-separator ocultable">
                 <img src="images/img_ondas1.svg" alt="Separación en ondas" width="100%" />
               </div>
 
-              <div class="boda-ayg info-container">
+              <div id="dress-code" class="boda-ayg info-container ocultable" style="padding: 0 20px;">
                 <div class="ayg-section" data-aos="fade-right" data-aos-duration="750" data-aos-delay="100">
                   <div class="ayg-section-title-container">
                     <h2 class="ayg-section-title">Dress Code</h2>
                   </div>
-                  <div class="boda-ayg-section-descripcion">
+                  <div class="boda-ayg-section-descripcion" style="margin-bottom: 15px;">
                     <p>Queremos que se sientan ustedes mismos, pero con ese toque especial.<br />
                       ¡Gracias por ayudarnos a mantener el estilo de esta celebración tan esperada!</p>
                   </div>
@@ -217,26 +202,26 @@
                 </div>
               </div>
 
-              <div class="boda-ayg separator-container-bottom invertido">
+              <div class="boda-ayg separator-container-bottom invertido ocultable">
                 <img src="images/img_ondas3.svg" alt="Separación en ondas" width="100%" />
               </div>
 
-              <div class="ayg-imagen-horizontal-container">
+              <div class="ayg-imagen-horizontal-container ocultable">
                 <div class="ayg-imagen-horizontal">
                   <img id="miImagen" src="images/IMG_4484.jpg" alt="ayg imagen horizontal" />
                 </div>
               </div>
 
-              <div class="boda-ayg separator-container-top second-separator">
+              <div class="boda-ayg separator-container-top second-separator ocultable">
                 <img src="images/img_ondas3.svg" alt="Separación en ondas" width="100%" />
               </div>
 
-              <div class="boda-ayg info-container">
+              <div id="regalos" class="boda-ayg info-container ocultable" style="padding: 0 20px;">
                 <div class="ayg-section" data-aos="fade-left" data-aos-duration="750" data-aos-delay="100">
                   <div class="ayg-section-title-container" style="margin-top: 60px;">
                     <h2 class="ayg-section-title">Regalos</h2>
                   </div>
-                  <div class="boda-ayg-section-descripcion">
+                  <div class="boda-ayg-section-descripcion" style="margin-bottom: 15px;">
                     <p>Tu compañía es lo más importante para nosotros.
                       <br />
                       Pero si deseás hacernos un obsequio, podés colaborar con nuestra luna de miel.
@@ -249,9 +234,10 @@
                       </div>
                     </div>
                     <div class="ayg-right">
-                      <div class="ayg-section-text" style="text-align: left;">Alias: <b style="font-size: 18px;">gabrielmasclef</b></div>
-                      <div class="ayg-section-text" style="text-align: left;">BTC: <b style="font-size: 14px;">bc1q5wqjhanaqhnk5v8qn5xz9fhdqknwlsegk3uyqa</b></div>
-                      <div class="ayg-section-text" style="text-align: left;">EVM: <b style="font-size: 14px;">0xFb1463929c37AE13E3bB2437A30c09B297012721</b></div>
+                      <div class="ayg-section-text" style="text-align: left;">Alias 1: <br /><b style="font-size: 18px;">bodaantoygabriel</b></div>
+                      <div class="ayg-section-text" style="text-align: left;">Alias 2: <br /><b style="font-size: 18px;">bodaantoygabriel.LEMON</b></div>
+                      <div class="ayg-section-text" style="text-align: left;">BTC: <br /><b style="font-size: 14px;">bc1q5wqjhanaqhnk5v8qn5xz9fhdqknwlsegk3uyqa</b></div>
+                      <div class="ayg-section-text" style="text-align: left;">EVM: <br /><b style="font-size: 14px;">0xFb1463929c37AE13E3bB2437A30c09B297012721</b></div>
                     </div>
                   </div>
                 </div>
@@ -267,14 +253,14 @@
                 </div>
               </div>
 
-              <div class="boda-ayg separator-container-bottom invertido">
+              <div class="boda-ayg separator-container-bottom invertido ocultable">
                 <img src="images/img_ondas3.svg" alt="Separación en ondas" width="100%" />
               </div>
 
-              <div class="boda-ayg-hashtag-section">
-                <div class="boda-ayg-section-descripcion">
+              <div id="agradecimiento-ig" class="boda-ayg-hashtag-section ocultable">
+                <div id="agradecimiento" class="boda-ayg-section-descripcion">
                   <p>¡Gracias por acompañarnos y ser parte de este momento inolvidable!</p>
-                  <p>No olvides compartir tus historias en las redes con el hashtag:</p>
+                  <!-- <p>No olvides compartir tus historias en las redes con el hashtag:</p> -->
                 </div>
                 <div class="boda-ayg-hashtag">
                   <div class="ayg-instagram-img-container">
@@ -284,11 +270,11 @@
                 </div>
               </div>
 
-                  <div class="boda-ayg separator-container-bottom" style="margin-top: 0px;">
+                  <div class="boda-ayg separator-container-bottom ocultable" style="margin-top: 0px;">
                     <img src="images/img_ondas2.svg" alt="Separación en ondas" width="100%" />
                   </div>
     
-                  <div class="boda-ayg info-container-gallery">
+                  <div id="galeria-final" class="boda-ayg info-container-gallery ocultable">
                     <div class="swiper gallery-swiper">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -322,10 +308,8 @@
                       <p>And nothing else matters...</p>
                     </div>
                   </div>
-                <!-- </div>
-              </div> -->
 
-              <div class="ayg-easter-egg-container">
+              <div class="ayg-easter-egg-container ocultable">
                 <div class="ayg-easter-egg-head" onclick="mostrarVideo()">
                   <img id="borisHead" src="images/boris-head.PNG" alt="boris head easter egg" />
                 </div>
@@ -337,68 +321,7 @@
                 </div>
               </div>
 
-						<!-- Footer -->
-							<!-- <footer>
-								<div class="pagination">
-								</div>
-							</footer> -->
-
 					</div>
-
-				<!-- Footer -->
-					<!-- <footer id="footer"> -->
-						<!-- <section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section> -->
-						<!-- <section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer> -->
-
-				<!-- Copyright -->
-					<!-- <div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div> -->
-
 			</div>
 
 		<!-- Scripts -->
@@ -408,7 +331,6 @@
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
@@ -465,6 +387,7 @@
       });
       animInstagram.play();
     </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -497,12 +420,14 @@
         loop: true,
       });
     </script>
-    <!-- <source src="video/The-Big-Lebowski-Dream-Sequence-One.mp4" type="video/mp4">
-              <source src="video/BorisBrejcha-Gravity.mp4" type="video/mp4">
-              <source src="video/EmpireOfTheSun-WeAreThePeople-ARTBAT-Remix.mp4" type="video/mp4"> -->
     <script>
+      lucide.createIcons(); // Inicializa los íconos
       const video = document.getElementById('bgVideo');
       const btn = document.getElementById('soundToggle');
+      const iconContainer = document.getElementById("soundIcon");
+      const iconSoundOn = document.getElementById("iconSoundOn");
+      const iconSoundOff = document.getElementById("iconSoundOff");
+      // const reloadBtn = document.getElementById('reloadBtn');
       const easterEggBorisBtn = document.getElementById('borisHead');
       const easterEggEmpireBtn = document.getElementById('empireHead');
       const easterEggDudeBtn = document.getElementById('dudeHead');
@@ -510,44 +435,57 @@
   
       btn.addEventListener('click', () => {
         video.muted = !video.muted;
-        btn.textContent = video.muted ? '🔇' : '🔊';
+        // btn.textContent = video.muted ? '🔇' : '🔊';
+        if (video.muted) {
+          iconSoundOn.style.display = "none";
+          iconSoundOff.style.display = "inline";
+        } else {
+          iconSoundOn.style.display = "inline";
+          iconSoundOff.style.display = "none";
+        }
       });
       easterEggBorisBtn.addEventListener('click', () => {
+        document.body.classList.add('no-scroll');
         const source = document.getElementById('videoSource');
         // Cambiar la fuente del video
-        source.src = 'video/BorisBrejcha-Gravity.mp4';
+        source.src = 'video/video1-borisGravity.mp4';
         // Recargar y reproducir
         video.load();
         video.muted = false;
-        video.volume = 1.0; // Volumen máximo
+        video.volume = 0.90; // Volumen 90%
         video.play();
-        btn.textContent = '🔊';
+        // btn.textContent = '🔊';
+        // iconContainer.setAttribute("data-lucide", "volume-2");
         // Desplaza el scroll hacia el tope de la página suavemente
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
       easterEggEmpireBtn.addEventListener('click', () => {
+        document.body.classList.add('no-scroll');
         const source = document.getElementById('videoSource');
         // Cambiar la fuente del video
-        source.src = 'video/EmpireOfTheSun-WeAreThePeople-ARTBAT-Remix.mp4';
+        source.src = 'video/video2-artbatEmpire.mp4';
         // Recargar y reproducir
         video.load();
         video.muted = false;
-        video.volume = 1.0; // Volumen máximo
+        video.volume = 0.80; // Volumen 80%
         video.play();
-        btn.textContent = '🔊';
+        // btn.textContent = '🔊';
+        // iconContainer.setAttribute("data-lucide", "volume-2");
         // Desplaza el scroll hacia el tope de la página suavemente
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
       easterEggDudeBtn.addEventListener('click', () => {
+        document.body.classList.add('no-scroll');
         const source = document.getElementById('videoSource');
         // Cambiar la fuente del video
-        source.src = 'video/The-Big-Lebowski-Dream-Sequence-One.mp4';
+        source.src = 'video/video3-lebowskiManInMe.mp4';
         // Recargar y reproducir
         video.load();
         video.muted = false;
-        video.volume = 1.0; // Volumen máximo
+        video.volume = 1; // Volumen max
         video.play();
-        btn.textContent = '🔊';
+        // btn.textContent = '🔊';
+        // iconContainer.setAttribute("data-lucide", "volume-2");
         // Desplaza el scroll hacia el tope de la página suavemente
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
@@ -555,7 +493,34 @@
     <script>
       function mostrarVideo() {
         document.getElementById('bgVideo').style.display = 'block';
+        document.getElementById('intro').classList.remove("hidden");
+        document.getElementById('main').classList.add("main-with-video");
+        setTimeout(() => {
+        document.getElementById('bgVideo').style.opacity = 1;
+        document.getElementById('soundToggle').style.display = 'block';
+        document.getElementById('reloadBtn').style.display = 'block';
+        document.getElementById('wrapper').classList.add("wrapper-with-video");
+        document.getElementById('intro').classList.add("intro-with-video");
+        const nosCasamos = document.getElementById('nos-casamos');
+        const date = document.getElementById('date');
+        const countdownSubtext = document.getElementById('countdown-subtext');
+        const agradecimiento = document.getElementById('agradecimiento');
+        
+        
+        nosCasamos.classList.add("with-video");
+        date.classList.add("with-video");
+        countdownSubtext.classList.add("with-video");
+        agradecimiento.classList.add("with-video");
+        date.textContent = "9 . 8 . 25";
+  
+  
+          // const elementos = document.querySelectorAll(".ocultable");
+          // elementos.forEach(el => {
+          //   el.style.display = "none";
+          // });
+        }, 1400);
       }
     </script>
+    <script src="assets/js/main.js"></script>
 	</body>
 </html>
