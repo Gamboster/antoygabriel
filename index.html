@@ -4,6 +4,7 @@
 		<title>Invitación Anto & Gabriel</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="favicon.png">
 		<link rel="stylesheet" href="assets/css/main.css" />
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -61,9 +62,9 @@
                     <div class="ayg-contador-bg-img">
                       <div class="ayg-circulo-contador">
                         <div class="ayg-circulo-header">
-                          <span class="ayg-circulo-header text">Falta</span>
+                          <span id="contador-falta" class="ayg-circulo-header text">Falta</span>
                         </div>
-                        <div class="ayg-reloj">
+                        <div id="contador" class="ayg-reloj">
                           <div class="ayg-reloj-col">
                             <div id="contador-dias" class="contador-numeritos"></div>
                             <span class="contador-textito">días</span>
@@ -114,7 +115,7 @@
                     </div>
                     <div class="ayg-right">
                       <div class="ayg-section-text">9 de Agosto, 2025</div>
-                      <div class="ayg-section-text">16:00 h.</div>
+                      <div class="ayg-section-text">16:00 hs.</div>
                       <div class="ayg-section-text">Parroquia Nuestra Señora del Valle</div>
                       <!-- https://maps.app.goo.gl/5UA97HfZHojpgbHi7 -->
                       <div class="ayg-section-text">Florida Sur 251, Yerba Buena, Tucumán</div>
@@ -136,7 +137,7 @@
                   <div class="boda-ayg section-container column-reverse">
                     <div class="ayg-left">
                       <div class="ayg-section-text">9 de Agosto, 2025</div>
-                      <div class="ayg-section-text">18:00 h.</div>
+                      <div class="ayg-section-text">18:00 hs.</div>
                       <div class="ayg-section-text">San Pablo Country Life & Golf</div>
                       <!-- https://maps.app.goo.gl/pZTChWGmESsaBZZn9 -->
                       <div class="ayg-section-text">Av Solano Vera, Ruta Provincial 339 Km. 5, San Pablo, Tucumán</div>
@@ -165,9 +166,9 @@
                 <img src="images/img_ondas1.svg" alt="Separación en ondas" width="100%" />
               </div>
 
-              <div class="ayg-imagen-horizontal-container ocultable">
-                <div class="ayg-imagen-horizontal">
-                  <img id="miImagen" src="images/IMG_4484.jpg" alt="ayg imagen horizontal" />
+              <div class="ayg-imagen-vertical-container ocultable">
+                <div class="ayg-imagen-vertical">
+                  <img id="miImagen-vertical" src="images/IMG_8792.jpg" alt="ayg imagen horizontal" />
                 </div>
               </div>
 
@@ -197,12 +198,6 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- <div class="boda-ayg section-container">
-                    <ul class="actions special">
-                      <li><a href="#" class="button large">Preguntas Frecuentes</a></li>
-                    </ul>
-                </div> -->
               </div>
 
               <div class="boda-ayg separator-container-bottom invertido ocultable">
@@ -211,7 +206,7 @@
 
               <div class="ayg-imagen-horizontal-container ocultable">
                 <div class="ayg-imagen-horizontal">
-                  <img id="miImagen" src="images/IMG_4484.jpg" alt="ayg imagen horizontal" />
+                  <img id="miImagen-horizontal" src="images/IMG_4484.jpg" alt="ayg imagen horizontal" />
                 </div>
               </div>
 
@@ -287,7 +282,7 @@
   
                   </div>
 
-                <div class="boda-ayg separator-container-bottom" style="width: 102%; margin-top: 30px; margin-bottom: 20px;">
+                <div class="boda-ayg separator-container-bottom" style="width: 102%; margin-top: 30px;">
                   <img src="images/img_ondas5.svg" alt="Separación en ondas" width="100%" />
                 </div>
 
@@ -300,31 +295,39 @@
                 <div id="faq" class="faq-seccion oculto">
                   <div>
                     <div class="faq-pregunta">
-                      <i data-lucide="help-circle" class="icono-faq"></i>
+                      <div class="iconito">
+                        <i data-lucide="help-circle" class="icono-faq"></i>
+                      </div>
                       <span>¿Puedo llevar a mis hijos?</span>
                     </div>
-                    <p>No, esta será una celebración solo para adultos. ¡Queremos que disfruten de una noche relajada y divertida!</p>
+                    <p>No. Esta será una celebración solo para adultos. ¡Queremos que disfruten de una noche relajada y divertida!</p>
                   </div>
                 
                   <div>
                     <div class="faq-pregunta">
-                      <i data-lucide="help-circle" class="icono-faq"></i>
+                      <div class="iconito">
+                        <i data-lucide="help-circle" class="icono-faq"></i>
+                      </div>
                       <span>¿Puedo llevar a alguien que no está invitado?</span>
                     </div>
-                    <p>Te agradecemos mucho por respetar que la invitación es solo para las personas mencionadas. Estamos cuidando cada detalle para que todos puedan estar cómodos.</p>
+                    <p>No. Te agradecemos mucho por respetar que la invitación es solo para las personas mencionadas. Estamos cuidando cada detalle para que todos puedan estar cómodos.</p>
                   </div>
                 
                   <div>
                     <div class="faq-pregunta">
-                      <i data-lucide="help-circle" class="icono-faq"></i>
+                      <div class="iconito">
+                        <i data-lucide="help-circle" class="icono-faq"></i>
+                      </div>
                       <span>¿Hay código de vestimenta?</span>
                     </div>
-                    <p>Sí: <b>Elegante</b>. Nos encantaría que todos estén vestidos para una noche especial (¡y fotos inolvidables!). Esto implica evitar el uso de zapatillas, jeans o remeras. <b>Es importante recordar que los colores claros como: blanco, beige, plateado o similares están reservados para la novia!</b></p>
+                    <p>Sí: <b>Elegante</b>. Nos encantaría que todos estén vestidos para una noche especial. Esto implica evitar el uso de zapatillas, jeans o remeras. <b>Es importante recordar que los colores claros como: blanco, beige, plateado o similares están reservados para la novia!</b></p>
                   </div>
 
                   <div>
                     <div class="faq-pregunta">
-                      <i data-lucide="help-circle" class="icono-faq"></i>
+                      <div class="iconito">
+                        <i data-lucide="help-circle" class="icono-faq"></i>
+                      </div>
                       <span>¿Habrá opciones de comida para celíacos, vegetarianos o veganos?</span>
                     </div>
                     <p>Sí, tendremos en cuenta distintas necesidades alimentarias. Si tenés alguna restricción o requerimiento especial, por favor indicalo en nuestro formulario de confirmación con tiempo así podemos informarle al catering.</p>
@@ -332,7 +335,9 @@
 
                   <div>
                     <div class="faq-pregunta">
-                      <i data-lucide="help-circle" class="icono-faq"></i>
+                      <div class="iconito">
+                        <i data-lucide="help-circle" class="icono-faq"></i>
+                      </div>
                       <span>¿A qué hora empieza la ceremonia?</span>
                     </div>
                     <p>La ceremonia comenzará puntualmente a las 16:30 hs. Te recomendamos llegar unos minutos antes para no perderte nada.</p>
@@ -340,7 +345,9 @@
                 
                   <div>
                     <div class="faq-pregunta">
-                      <i data-lucide="help-circle" class="icono-faq"></i>
+                      <div class="iconito">
+                        <i data-lucide="help-circle" class="icono-faq"></i>
+                      </div>
                       <span>¿Qué pasa si no puedo ir?</span>
                     </div>
                     <p>¡Te vamos a extrañar! Pero por favor, avisanos lo antes posible para poder organizar todo de la mejor manera.</p>
@@ -380,28 +387,38 @@
                     <div class="swiper gallery-swiper">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                          <a href="images/fondo1.JPG" class="glightbox" data-gallery="bodas">
-                            <img src="images/fondo2.jpg" alt="Foto 1" />
+                          <a href="images/foto-carrusel-1.jpg" class="glightbox" data-gallery="bodas">
+                            <img src="images/thumb-1.jpg" alt="Foto 1" />
                           </a>
                         </div>
                         <div class="swiper-slide">
-                          <a href="images/fondo1.JPG" class="glightbox" data-gallery="bodas">
-                            <img src="images/fondo2.jpg" alt="Foto 2" />
+                          <a href="images/foto-carrusel-2.jpg" class="glightbox" data-gallery="bodas">
+                            <img src="images/thumb-2.jpg" alt="Foto 2" />
                           </a>
                         </div>
                         <div class="swiper-slide">
-                          <a href="images/fondo1.JPG" class="glightbox" data-gallery="bodas">
-                            <img src="images/fondo2.jpg" alt="Foto 3" />
+                          <a href="images/foto-carrusel-3.jpg" class="glightbox" data-gallery="bodas">
+                            <img src="images/thumb-3.jpg" alt="Foto 3" />
                           </a>
                         </div>
                         <div class="swiper-slide">
-                          <a href="images/fondo1.JPG" class="glightbox" data-gallery="bodas">
-                            <img src="images/fondo2.jpg" alt="Foto 4" />
+                          <a href="images/foto-carrusel-4.jpg" class="glightbox" data-gallery="bodas">
+                            <img src="images/thumb-4.jpg" alt="Foto 4" />
                           </a>
                         </div>
                         <div class="swiper-slide">
-                          <a href="images/fondo1.JPG" class="glightbox" data-gallery="bodas">
-                            <img src="images/fondo2.jpg" alt="Foto 5" />
+                          <a href="images/foto-carrusel-5.jpg" class="glightbox" data-gallery="bodas">
+                            <img src="images/thumb-5.jpg" alt="Foto 5" />
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="images/foto-carrusel-6.jpg" class="glightbox" data-gallery="bodas">
+                            <img src="images/thumb-6.jpg" alt="Foto 6" />
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="images/foto-carrusel-7.jpg" class="glightbox" data-gallery="bodas">
+                            <img src="images/thumb-7.jpg" alt="Foto 7" />
                           </a>
                         </div>
                       </div>
@@ -535,11 +552,20 @@
 
         // Esperamos un poquito para que se muestre y después hacemos scroll
         setTimeout(() => {
-          seccion.scrollIntoView({ behavior: 'smooth' });
-        }, 100); // pequeño delay para que dé tiempo a expandirse
+          // seccion.scrollIntoView({ behavior: 'smooth' });
+
+          window.scrollTo({
+            top: seccion.offsetTop + 500,
+            behavior: 'smooth'
+          });
+        }, 150); // pequeño delay para que dé tiempo a expandirse
         } else {
           // Si ya está visible, simplemente hacemos scroll
-          seccion.scrollIntoView({ behavior: 'smooth' });
+          // seccion.scrollIntoView({ behavior: 'smooth' });
+          window.scrollTo({
+            top: seccion.offsetTop + 500,
+            behavior: 'smooth'
+          });
         }
       });
     </script>
@@ -620,6 +646,11 @@
         // iconContainer.setAttribute("data-lucide", "volume-2");
         // Desplaza el scroll hacia el tope de la página suavemente
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        const faqSeccion = document.getElementById('faq');
+        if (faqSeccion.classList.contains('visible')) {
+          faqSeccion.classList.remove('visible');
+          faqSeccion.classList.add('oculto');
+        }
       });
       easterEggEmpireBtn.addEventListener('click', () => {
         document.body.classList.add('no-scroll');
@@ -636,6 +667,11 @@
         // iconContainer.setAttribute("data-lucide", "volume-2");
         // Desplaza el scroll hacia el tope de la página suavemente
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        const faqSeccion = document.getElementById('faq');
+        if (faqSeccion.classList.contains('visible')) {
+          faqSeccion.classList.remove('visible');
+          faqSeccion.classList.add('oculto');
+        }
       });
       easterEggDudeBtn.addEventListener('click', () => {
         document.body.classList.add('no-scroll');
@@ -652,6 +688,11 @@
         // iconContainer.setAttribute("data-lucide", "volume-2");
         // Desplaza el scroll hacia el tope de la página suavemente
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        const faqSeccion = document.getElementById('faq');
+        if (faqSeccion.classList.contains('visible')) {
+          faqSeccion.classList.remove('visible');
+          faqSeccion.classList.add('oculto');
+        }
       });
     </script>
     <script>

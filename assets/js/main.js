@@ -143,40 +143,40 @@
 				});
 
 		// Panel.
-			$navPanel = $(
-				'<div id="navPanel">' +
-					'<nav>' +
-					'<a href="#ceremonia" class="logo">Ceremonia</a>' +
-					'</nav>' +
-					'<nav>' +
-					'<a href="#navPanel">Fiesta</a>' +
-          '</nav>' +
-					'<nav>' +
-					'<a href="#navPanel">Dress Code</a>' +
-          '</nav>' +
-					'<nav>' +
-					'<a href="#navPanel">Regalos</a>' +
-					'</nav>' +
-          '<nav>' +
-					'<a href="#navPanel">Extra</a>' +
-					'</nav>' +
-					'<a href="#navPanel" class="close"></a>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right',
-					target: $body,
-					visibleClass: 'is-navPanel-visible'
-				});
+			// $navPanel = $(
+			// 	'<div id="navPanel">' +
+			// 		'<nav>' +
+			// 		'<a href="#ceremonia" class="logo">Ceremonia</a>' +
+			// 		'</nav>' +
+			// 		'<nav>' +
+			// 		'<a href="#navPanel">Fiesta</a>' +
+      //     '</nav>' +
+			// 		'<nav>' +
+			// 		'<a href="#navPanel">Dress Code</a>' +
+      //     '</nav>' +
+			// 		'<nav>' +
+			// 		'<a href="#navPanel">Regalos</a>' +
+			// 		'</nav>' +
+      //     '<nav>' +
+			// 		'<a href="#navPanel">Extra</a>' +
+			// 		'</nav>' +
+			// 		'<a href="#navPanel" class="close"></a>' +
+			// 	'</div>'
+			// )
+			// 	.appendTo($body)
+			// 	.panel({
+			// 		delay: 500,
+			// 		hideOnClick: true,
+			// 		hideOnSwipe: true,
+			// 		resetScroll: true,
+			// 		resetForms: true,
+			// 		side: 'right',
+			// 		target: $body,
+			// 		visibleClass: 'is-navPanel-visible'
+			// 	});
 
 			// Get inner.
-				$navPanelInner = $navPanel.children('nav');
+				// $navPanelInner = $navPanel.children('nav');
 
 			// Move nav content on breakpoint change.
 				var $navContent = $nav.children();
@@ -195,11 +195,11 @@
 				breakpoints.on('<=medium', function() {
 
 					// Nav -> NavPanel.
-						$navContent.appendTo($navPanelInner);
+						// $navContent.appendTo($navPanelInner);
 
 					// Flip icon classes.
-						$navPanelInner.find('.icons, .icon')
-							.addClass('alt');
+						// $navPanelInner.find('.icons, .icon')
+						// 	.addClass('alt');
 
 				});
 
@@ -276,8 +276,12 @@
 
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
-      const desplazamiento = scrollY * 0.04; // ajusta la velocidad
-      document.getElementById('miImagen').style.transform = `translateX(${-230 + desplazamiento}px)`;
+      const desplazamientoVertical = scrollY * 0.075; // ajusta la velocidad
+      const desplazamientoHorizontal = scrollY * 0.04; // ajusta la velocidad
+
+      document.getElementById('miImagen-vertical').style.transform = `translateY(${0 + desplazamientoVertical}px)`;
+
+      document.getElementById('miImagen-horizontal').style.transform = `translateX(${-270 + desplazamientoHorizontal}px)`;
     });
 
     // 🔧 Configura aquí la fecha de la fiesta (Año, Mes - 1, Día, Hora, Min, Seg)
@@ -288,7 +292,8 @@
       const diferencia = fechaEvento - ahora;
 
       if (diferencia <= 0) {
-        document.getElementById("contador").innerHTML = "¡La fiesta ha comenzado! 🎊";
+        document.getElementById("contador-falta").innerHTML = "¡Es Hoy!";
+        document.getElementById("contador").innerHTML = "<div style=\"height: 50px; font-size: 44px;\">🎊</div>";
         clearInterval(timer);
         return;
       }
