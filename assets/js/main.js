@@ -285,7 +285,7 @@
     });
 
     // 🔧 Configura aquí la fecha de la fiesta (Año, Mes - 1, Día, Hora, Min, Seg)
-    const fechaEvento = new Date(2025, 7, 9, 16, 30, 0); // 09 de agosto de 2025 a las 16:30
+    const fechaEvento = new Date(2025, 7, 9, 16, 0, 0); // 09 de agosto de 2025 a las 16:00
 
     function actualizarContador() {
       const ahora = new Date();
