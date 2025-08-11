@@ -292,7 +292,7 @@
       const diferencia = fechaEvento - ahora;
 
       if (diferencia <= 0) {
-        document.getElementById("contador-falta").innerHTML = "¡Es Hoy!";
+        document.getElementById("contador-falta").innerHTML = "¡Gracias!";
         document.getElementById("contador").innerHTML = "<div style=\"height: 50px; font-size: 44px;\">🎊</div>";
         clearInterval(timer);
         return;
